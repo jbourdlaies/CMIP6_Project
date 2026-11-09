@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CMIP6 Temperature Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>CMIP6 Global Temperature Explorer</h1>
+
+        <p class="subtitle">
+            Comparing pre-industrial (950-1450) control and historical
+            (1850-2015) climate simulations using ACCESS-CM2.
+        </p>
+
+        <section class="controls">
+
+            <label>
+                <input type="checkbox" id="show-pi" checked>
+                <span class="blue">Pre-industrial (piControl)</span>
+            </label>
+
+            <label>
+                <input type="checkbox" id="show-hist" checked>
+                <span class="red">Historical</span>
+            </label>
+
+        </section>
+
+        <div id="chart"></div>
+
+        <div id="tooltip"></div>
+
+        <p class="note">
+            Temperature anomalies are calculated relative to each
+            experiment's own reference period.
+        </p>
+
+        <section class="writeup">
+
+            <h2>Project Write-up</h2>
+
+            <section class="writeup-section">
+
+                <h3>Design Rationale</h3>
+
+                <p>
+                    Our visualization uses an interactive trendline graph to compare 
+                    global temperature anomalies from 2 CMIP6 climate experiments,
+                    piControl and historical, using the ACCESS-CM2 
+                    climate model.
+                </p>
+
+                <p>
+                    We experimented with other graphs such as bar charts, 
+                    heatmaps, categorical dot plots, and single line charts. 
+                    In the end, an interactive trendline graph featuring two 
+                    separate lines was selected because it effectively 
+                    communicates changes in temperature over time and makes 
+                    it easier to identify distinct long-term trends and variation 
+                    between the two experiments. Simulation year is displayed 
+                    along the horizontal axis while global temperature 
+                    anomaly (°C) is displayed along the vertical axis.
+                </p>
+
+                <p>
+                    Different colors were assigned to each experiment to 
+                    make the two datasets visually distinguishable. Blue 
+                    represents the pre-industrial piControl simulation, 
+                    while red represents the historical simulation. 
+                    These colors provide a clear visual contrast without 
+                    making the graph unnecessarily complicated.
+                </p>
+
+                <p>
+                    The checkboxes at the top allow users to independently 
+                    show or hide either experiment. This provides flexibility 
+                    when examining individual trends or comparing both 
+                    simulations at the same time. A hover interaction was 
+                    also implemented to display the nearest data point's 
+                    experiment, year, and temperature anomaly.
+                </p>
+
+                <p>
+                    As we learned in DSC 10, the line graph is ultimately among 
+                    the best visualizations to represent data that takes place 
+                    over a continuous time dimension and showcase trends and 
+                    fluctuations.
+                </p>
+
+            </section>
+
+            <section class="writeup-section">
+
+                <h3>Development Process</h3>
+
+                <p>
+                    The application was developed using HTML, CSS,
+                    JavaScript, and the D3.js visualization library.
+                    HTML was used to establish the page structure,
+                    CSS was used for styling and layout, and D3.js
+                    was used to load, process, and visualize the
+                    CMIP6 temperature anomaly dataset.
+                </p>
+
+                <p>
+                    The development process involved preparing the CMIP6 
+                    dataset based on Sam Lau's approach, selecting parameters, 
+                    experimenting with different graphs using the data, 
+                    implementing the final dynamic graph, configuring 
+                    the axes and scales, adding interactive features, and 
+                    deploying the final website. Particular attention 
+                    was given to ensure that both experiments could be 
+                    compared clearly despite their different simulation periods.
+                </p>
+
+                <p>
+                    The project took approximately 4 people and took roughly 1
+                    week to complete. While we did not keep track of hours, it is 
+                    most likely that we spent an average of an hour per day each 
+                    doing our share of work. The most time-consuming
+                    aspect of development was the experimentation process, as 
+                    deciding what graphs to use and coding them to see how they 
+                    would turn out while also navigating the large dataset proved 
+                    to be a challenge initially.
+                </p>
+
+                <p>
+                    Team responsibilities were divided as follows:
+                    Justin Bourdlaies: Parameter selection, experimental heatmaps, 
+                    dynamic graph, website deployment
+                    Aditi Singh: Experimental categorical dot plots, experimental 
+                    initial line charts, written/visual analysis
+                    Gor Abaghyan: Experimental bar charts, experimental trendline, 
+                    written/visual analysis
+                    Tigran Zhamakochyan: Experimental heatmap, experimental separate
+                    trendlines, written/visual analysis
+                </p>
+
+                <p>
+                    Overall, the development process provided an
+                    opportunity to work with climate simulation data
+                    and explore how interactive data visualization
+                    can make complex scientific datasets more
+                    accessible and understandable.
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

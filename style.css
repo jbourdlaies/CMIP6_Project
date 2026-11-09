@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 30px;
+    color: #263238;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #667085;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.controls label {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.blue {
+    color: #2878b5;
+    font-weight: bold;
+}
+
+.red {
+    color: #d94b45;
+    font-weight: bold;
+}
+
+#chart {
+    width: 100%;
+}
+
+#chart svg {
+    width: 100%;
+    height: auto;
+}
+
+.axis-label {
+    font-size: 13px;
+    fill: #374151;
+}
+
+.note {
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+#tooltip {
+    position: absolute;
+    background: rgba(30, 41, 59, 0.95);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    pointer-events: none;
+    opacity: 0;
+    line-height: 1.6;
+    z-index: 10;
+}
+
+/* Project Write-up */
+
+.writeup {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.writeup h2 {
+    text-align: center;
+    color: #263238;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.writeup-section {
+    margin-bottom: 35px;
+}
+
+.writeup-section h3 {
+    color: #2878b5;
+    font-size: 19px;
+    margin-bottom: 15px;
+    border-left: 4px solid #2878b5;
+    padding-left: 12px;
+}
+
+.writeup-section p {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+@media (max-width: 600px) {
+    .writeup {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .writeup h2 {
+        font-size: 22px;
+    }
+
+    .writeup-section h3 {
+        font-size: 17px;
+    }
+
+    .writeup-section p {
+        font-size: 14px;
+        text-align: left;
+    }
+}
